@@ -4,36 +4,39 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 @Component({
     selector: 'purchase-app',
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css', 
+    '../../node_modules/ag-grid-community/dist/styles/ag-grid.css',
+    '../../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css']
 })
 export class AppComponent { 
 
-    public datatable: Datatable;
-    public serverDatatable: any;
-    public x: any;
+    // public datatable: Datatable;
+    // public serverDatatable: any;
+    // public x: any;
 
-    constructor(private httpClient: HttpClient)
-    {
+    // constructor(private httpClient: HttpClient)
+    // {
 
-        let columns = ['Колонка 1', 'Колонка 2'];
-        let rows = [['Строка 1', 'Строка 1'], ['Строка 2', 'Строка 2']];
+    //     let columns = ['Колонка 1', 'Колонка 2'];
+    //     let rows = [['Строка 1', 'Строка 1'], ['Строка 2', 'Строка 2']];
   
-        let datatable = new Datatable(columns, rows);
-        this.datatable = datatable;
+    //     let datatable = new Datatable(columns, rows);
+    //     this.datatable = datatable;
 
-        var jsonString = JSON.stringify(datatable);
+    //     var jsonString = JSON.stringify(datatable);
         
-        console.log(jsonString);
+    //     console.log(jsonString);
 
-        httpClient.get('api/Test/GetTable/1')
-              .subscribe(data => 
-                {
-                    this.serverDatatable = data;
-                    this.x = data;
-                    console.log("хуй");
-                    console.log(data);
-                    this.datatable = JSON.parse(data.toString());
-                }
-            );
-    }
+    //     httpClient.get('api/Test/GetTable/1')
+    //           .subscribe(data => 
+    //             {
+    //                 this.serverDatatable = data;
+    //                 this.x = data;
+    //                 console.log("хуй");
+    //                 console.log(data);
+    //                 this.datatable = JSON.parse(data.toString());
+    //             }
+    //         );
+    // }
 }

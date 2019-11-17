@@ -1,1 +1,7 @@
-<div>Список загрузок</div>
+<ul class="nav">
+    <li *ngFor="let loader of loaders">
+        <a href="#">
+            <i class="zmdi"></i> {{loader}}
+        </a>
+    </li>
+</ul>

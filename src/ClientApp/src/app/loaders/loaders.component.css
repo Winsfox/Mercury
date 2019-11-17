@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+.nav{
+  
+}
+
+.nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+.nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+.nav a i{
+  margin-right: 16px;
+}
