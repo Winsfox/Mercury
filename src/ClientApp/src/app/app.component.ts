@@ -1,42 +1,16 @@
-import { Component } from '@angular/core';
-import { Datatable } from './models/datatable';
+import { Component, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 @Component({
     selector: 'purchase-app',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css', 
-    '../../node_modules/ag-grid-community/dist/styles/ag-grid.css',
-    '../../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css']
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
+    //@ViewChild(ChildComponent) private myChild: ChildComponent;
 
-    // public datatable: Datatable;
-    // public serverDatatable: any;
-    // public x: any;
-
-    // constructor(private httpClient: HttpClient)
-    // {
-
-    //     let columns = ['Колонка 1', 'Колонка 2'];
-    //     let rows = [['Строка 1', 'Строка 1'], ['Строка 2', 'Строка 2']];
-  
-    //     let datatable = new Datatable(columns, rows);
-    //     this.datatable = datatable;
-
-    //     var jsonString = JSON.stringify(datatable);
-        
-    //     console.log(jsonString);
-
-    //     httpClient.get('api/Test/GetTable/1')
-    //           .subscribe(data => 
-    //             {
-    //                 this.serverDatatable = data;
-    //                 this.x = data;
-    //                 console.log("хуй");
-    //                 console.log(data);
-    //                 this.datatable = JSON.parse(data.toString());
-    //             }
-    //         );
-    // }
+    // Выбран загрузчик
+    onLoaderSelected(id: number){
+        console.log("Выбран загрузчик:" + id);
+    }
 }

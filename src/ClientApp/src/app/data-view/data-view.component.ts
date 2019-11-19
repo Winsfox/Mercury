@@ -10,25 +10,15 @@ import { } from 'ag-grid-community';
 })
 export class DataViewComponent {
     public datatable: Datatable;
-    columnDefs = [
-        {headerName: 'Make', field: 'make'},
-        {headerName: 'Model', field: 'model'},
-        {headerName: 'Price', field: 'price'}
-    ];
 
-    rowData = [
-        {make: 'Toyota', model: 'Celica', price: 35000},
-        {make: 'Ford', model: 'Mondeo', price: 32000},
-        {make: 'Porsche', model: 'Boxter', price: 72000}
-    ];
+    constructor(private httpClient: HttpClient) {}
 
-    constructor(private httpClient: HttpClient)
-    {   
-        httpClient.get('api/Test/GetTable/1')
+    ngOnInit() {
+        this.httpClient.get('api/Loaders/GetTable/1')
               .subscribe(data => 
                 {
                     this.datatable = JSON.parse(data.toString());
                 }
-            );            
+            );           
     }
 }

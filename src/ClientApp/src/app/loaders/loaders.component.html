@@ -1,7 +1,7 @@
 <ul class="nav">
     <li *ngFor="let loader of loaders">
-        <a href="#">
-            <i class="zmdi"></i> {{loader}}
+        <a href="#" (click)="select(loader.id)">
+            <i class="zmdi"></i> {{loader.name}} {{loader.id}}
         </a>
     </li>
 </ul>

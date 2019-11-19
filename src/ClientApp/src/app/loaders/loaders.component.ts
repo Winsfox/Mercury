@@ -1,4 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, Output, EventEmitter } from '@angular/core'
+import { Loader } from '../models/loader'
+import { DataService } from '../data.service'
 
 @Component({
     selector: 'loaders-comp',
@@ -6,10 +8,21 @@ import { Component } from '@angular/core'
     styleUrls: ['./loaders.component.css']
 })
 export class LoadersComponent {
-    public loaders: string[]; 
+    // Коллекция загрузчиков
+    public loaders: Loader[]; 
 
-    constructor()
-    {
-        this.loaders = ['Загрузчик 1', 'Загрузчик 2', 'Загрузчик 3'];
+    // Событие выбора определенного загрузчика
+    @Output() onSelected = new EventEmitter<number>();
+
+    constructor(private dataService: DataService) {}
+
+    ngOnInit() {
+        this.loaders = this.dataService.getLoaders();
+    }    
+
+    // Выбор загрузчика
+    public select(id: number) {
+        console.log(id);
+        this.onSelected.emit(id);
     }
 }
