@@ -23,6 +23,10 @@ export class LoadersComponent {
     // Выбор загрузчика
     public select(id: number) {
         console.log(id);
+
+        // Обновляем состояние (выбран загрузчик)
+        this.dataService.state = 1;
+
         this.onSelected.emit(id);
     }
 }

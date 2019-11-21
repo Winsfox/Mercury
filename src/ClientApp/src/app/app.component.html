@@ -2,8 +2,10 @@
   <!-- Sidebar -->
   <div id="sidebar">
     <header>
-      <a href="#">Mercury</a>
+      <div id="mercury_icon_div"></div>     
+      <div><a href="#">Mercury</a></div>       
     </header>
+    <!-- Компонент списка загрузчиков -->
     <loaders-comp (onSelected)="onLoaderSelected($event)"></loaders-comp>
   </div>
   <!-- Content -->
@@ -20,7 +22,11 @@
       </div>
     </nav>
     <div class="container-fluid">
-      <data-view-comp></data-view-comp>
+      <!-- Компонент списка входных данных -->
+      <income-data-comp *ngIf="visibleState == 1" (onSelected)="onIncomeDataSelected($event)"></income-data-comp>
+      <!-- Отображение загружаемого набора данных -->
+      <data-view-comp *ngIf="visibleState == 2"></data-view-comp>
+      <div>{{dataService.state}}</div>
     </div>
   </div>
 </div>

@@ -24,7 +24,7 @@ namespace Mercury.Controllers
             dt.Columns.Add("Column1");
             dt.Columns.Add("Column2");
 
-            for (var index = 0; index < 9; index++)
+            for (var index = 0; index < 10; index++)
             {
                 var newRow = dt.NewRow();
                 newRow["Column1"] = index.ToString();

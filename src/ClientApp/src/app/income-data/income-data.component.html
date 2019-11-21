@@ -1,0 +1,17 @@
+<div class="panel">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr *ngFor="let incomeData of incomeDataList" (click)="select(incomeData.id)">
+                    <td>{{incomeData.date}}</td>
+                    <td>{{incomeData.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

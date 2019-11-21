@@ -55,3 +55,13 @@ body {
 #sidebar header a:hover {
   color: #fff;
 }
+
+#mercury_icon_div {
+  background-image: url("/public/mercury.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center-top;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
